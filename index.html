@@ -71,7 +71,11 @@
   .contact p{color:var(--muted);margin-bottom:28px}
   footer{padding:32px 0;text-align:center;color:var(--muted);font-size:.88rem;
     border-top:1px solid #141c36;margin-top:24px;position:relative;z-index:1}
-  @media(max-width:600px){nav a{margin-left:14px;font-size:.88rem}.about{padding:28px 22px}}
+  @media(max-width:640px){
+    nav a:not(.cta){display:none}
+    .cta{padding:8px 18px;font-size:.85rem;white-space:nowrap}
+    .about{padding:28px 22px}
+  }
 </style>
 </head>
 <body>
@@ -102,28 +106,14 @@
   <section id="projects">
     <span class="kicker">Selected Work</span>
     <h2>What I'm building</h2>
-    <p class="sub">Shipped products &amp; experiments — recent work.</p>
-    <div class="grid">
+    <p class="sub">My main build — in active development.</p>
+    <div class="grid" style="grid-template-columns:1fr;max-width:640px;margin:0 auto">
       <div class="card">
         <div class="icon">🤖</div>
         <h3>Aether — Personal AI OS</h3>
         <p>A Jarvis-style AI assistant: voice control, proactive briefings, task automation,
            client CRM, content autopilot and a self-redesigning UI. Flutter app + Python brain.</p>
         <div><span class="tag">Flutter</span><span class="tag">Python</span><span class="tag">AI</span></div>
-      </div>
-      <div class="card">
-        <div class="icon">🍽️</div>
-        <h3>RestoMenu</h3>
-        <p>White-label restaurant menu &amp; ordering web app — QR dine-in, takeaway and delivery,
-           with an owner admin panel. Built for local restaurants.</p>
-        <div><span class="tag">Web App</span><span class="tag">SaaS</span></div>
-      </div>
-      <div class="card">
-        <div class="icon">🎬</div>
-        <h3>Urdu Education Channels</h3>
-        <p>Faceless curiosity-explainer videos and kids' stories in Urdu — scripted, voiced and
-           produced end-to-end with AI tooling.</p>
-        <div><span class="tag">YouTube</span><span class="tag">Content</span></div>
       </div>
     </div>
   </section>
