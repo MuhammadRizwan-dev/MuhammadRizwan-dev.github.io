@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Rizwan — Builder of Aether</title>
+<meta name="description" content="Muhammad Rizwan — student developer building Aether, a Jarvis-like personal AI OS, and creating faceless Urdu educational content.">
+<style>
+  :root{
+    --bg:#070b16; --bg2:#0b1122; --card:rgba(20,28,52,.72);
+    --text:#eef2ff; --muted:#93a0c4;
+    --accent:#5b8cff; --accent2:#a06bff;
+    --radius:18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);
+    font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.65;overflow-x:hidden}
+  a{color:var(--accent);text-decoration:none}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 22px;position:relative;z-index:1}
+  .glow{position:fixed;border-radius:50%;filter:blur(110px);opacity:.35;z-index:0;pointer-events:none}
+  .g1{width:480px;height:480px;background:#2b3f9e;top:-140px;left:-120px}
+  .g2{width:420px;height:420px;background:#6b2fb3;bottom:-120px;right:-100px}
+  header{padding:26px 0;display:flex;justify-content:space-between;align-items:center}
+  .logo{font-weight:800;font-size:1.3rem;letter-spacing:.5px}
+  .logo span{background:linear-gradient(90deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  nav a{margin-left:24px;color:var(--muted);font-size:.95rem;transition:.2s}
+  nav a:hover{color:var(--text)}
+  .cta{border:1px solid rgba(91,140,255,.5);padding:9px 22px;border-radius:999px;color:var(--text)!important}
+  .cta:hover{background:rgba(91,140,255,.12)}
+  .hero{padding:84px 0 64px;text-align:center}
+  .badge{display:inline-block;background:rgba(91,140,255,.1);border:1px solid rgba(91,140,255,.35);
+    color:#9db9ff;padding:7px 18px;border-radius:999px;font-size:.85rem;margin-bottom:24px;letter-spacing:.4px}
+  .hero h1{font-size:clamp(2.4rem,7vw,4rem);line-height:1.12;margin-bottom:14px;font-weight:800}
+  .hero h1 .grad{background:linear-gradient(90deg,#7aa5ff,#c49bff);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .tagline{font-size:clamp(1.1rem,3vw,1.5rem);color:#c6d2f5;margin-bottom:18px;font-weight:600}
+  .hero p{color:var(--muted);max-width:640px;margin:0 auto 34px;font-size:1.05rem}
+  .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 32px;border-radius:12px;font-weight:600;font-size:1rem;transition:.2s}
+  .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:none}
+  .btn.primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(91,140,255,.4)}
+  .btn.ghost{border:1px solid #2c3a63;color:var(--text)}
+  .btn.ghost:hover{border-color:var(--accent);background:rgba(91,140,255,.07)}
+  section{padding:60px 0}
+  .kicker{display:inline-block;font-size:.8rem;letter-spacing:2px;color:var(--accent);
+    text-transform:uppercase;margin-bottom:10px}
+  h2{font-size:1.8rem;margin-bottom:6px}
+  .sub{color:var(--muted);margin-bottom:30px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .card{background:var(--card);border:1px solid #232f55;border-radius:var(--radius);
+    padding:30px;transition:.25s;backdrop-filter:blur(8px)}
+  .card:hover{transform:translateY(-5px);border-color:rgba(91,140,255,.6);
+    box-shadow:0 14px 40px rgba(43,63,158,.35)}
+  .card .icon{font-size:2rem;margin-bottom:14px}
+  .card h3{margin-bottom:10px;font-size:1.2rem}
+  .card p{color:var(--muted);font-size:.95rem;margin-bottom:16px}
+  .tag{display:inline-block;background:rgba(91,140,255,.12);border:1px solid rgba(91,140,255,.25);
+    color:#9db9ff;font-size:.76rem;padding:4px 13px;border-radius:999px;margin:4px 6px 0 0}
+  .about{background:var(--bg2);border:1px solid #1a2340;border-radius:var(--radius);padding:40px}
+  .about p{color:var(--muted);margin-bottom:14px}
+  .about strong{color:var(--text)}
+  .stats{display:flex;gap:16px;flex-wrap:wrap;margin-top:22px}
+  .stat{background:rgba(91,140,255,.06);border:1px solid #232f55;border-radius:14px;
+    padding:16px 26px;text-align:center;min-width:120px}
+  .stat b{display:block;font-size:1.5rem;background:linear-gradient(90deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat span{font-size:.84rem;color:var(--muted)}
+  .contact{text-align:center;background:linear-gradient(135deg,rgba(43,63,158,.25),rgba(107,47,179,.18));
+    border:1px solid #2a3763;border-radius:var(--radius);padding:56px 28px}
+  .contact p{color:var(--muted);margin-bottom:28px}
+  footer{padding:32px 0;text-align:center;color:var(--muted);font-size:.88rem;
+    border-top:1px solid #141c36;margin-top:24px;position:relative;z-index:1}
+  @media(max-width:600px){nav a{margin-left:14px;font-size:.88rem}.about{padding:28px 22px}}
+</style>
+</head>
+<body>
+<div class="glow g1"></div><div class="glow g2"></div>
+<div class="wrap">
+
+  <header>
+    <div class="logo">Aethers<span>Lab</span></div>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="cta">Get in Touch</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="badge">Student Developer · Pakistan</div>
+    <h1>Muhammad <span class="grad">Rizwan</span></h1>
+    <div class="tagline">Builder of Aether — Personal AI OS</div>
+    <p>Designing &amp; engineering intelligent systems — a Jarvis-like personal assistant,
+       cloud experiments, and faceless Urdu educational content. Zero budget, full curiosity.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">View Projects</a>
+      <a class="btn ghost" href="https://github.com/MuhammadRizwan-dev" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+
+  <section id="projects">
+    <span class="kicker">Selected Work</span>
+    <h2>What I'm building</h2>
+    <p class="sub">Shipped products &amp; experiments — recent work.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">🤖</div>
+        <h3>Aether — Personal AI OS</h3>
+        <p>A Jarvis-style AI assistant: voice control, proactive briefings, task automation,
+           client CRM, content autopilot and a self-redesigning UI. Flutter app + Python brain.</p>
+        <div><span class="tag">Flutter</span><span class="tag">Python</span><span class="tag">AI</span></div>
+      </div>
+      <div class="card">
+        <div class="icon">🍽️</div>
+        <h3>RestoMenu</h3>
+        <p>White-label restaurant menu &amp; ordering web app — QR dine-in, takeaway and delivery,
+           with an owner admin panel. Built for local restaurants.</p>
+        <div><span class="tag">Web App</span><span class="tag">SaaS</span></div>
+      </div>
+      <div class="card">
+        <div class="icon">🎬</div>
+        <h3>Urdu Education Channels</h3>
+        <p>Faceless curiosity-explainer videos and kids' stories in Urdu — scripted, voiced and
+           produced end-to-end with AI tooling.</p>
+        <div><span class="tag">YouTube</span><span class="tag">Content</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about">
+      <span class="kicker">About</span>
+      <h2>The short version</h2>
+      <p style="margin-top:14px">I'm a <strong>student developer from Rahim Yar Khan, Pakistan</strong>.
+         I learn by building — my main project <strong>Aether</strong> is an attempt at a personal
+         AI operating system that manages tasks, content, clients and devices.</p>
+      <p>I'm into <strong>AI</strong>, <strong>cybersecurity</strong> and <strong>content creation</strong> —
+         and I do it all on a <strong>zero budget</strong>, with free and open-source tools.</p>
+      <div class="stats">
+        <div class="stat"><b>3</b><span>Active projects</span></div>
+        <div class="stat"><b>2</b><span>Years of benefits</span></div>
+        <div class="stat"><b>0</b><span>Budget (PKR)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <span class="kicker">Contact</span>
+      <h2>Let's build something</h2>
+      <p>Open to collaborations, feedback and interesting conversations.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:rizwan@aetherslab.me">rizwan@aetherslab.me</a>
+        <a class="btn ghost" href="https://github.com/MuhammadRizwan-dev" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Muhammad Rizwan · AethersLab · Built with curiosity
+  </footer>
+
+</div>
+</body>
+</html>
